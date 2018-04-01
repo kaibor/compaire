@@ -7,7 +7,7 @@ Small command line tool to compare the content of two directories by their check
 
 ## Release
 
-[Download: Compaire v1.0](https://github.com/kaibor/compaire/releases/download/1.0/compaire.exe)
+[Download: Compaire v1.1](https://github.com/kaibor/compaire/releases/download/1.1/compaire.exe)
 
 ## Compatibility
 Compaire was written in .NET Mono (C#) and supports the following operating systems:
@@ -66,5 +66,3 @@ But there are also other purposes that may be useful to you :)
 [Download: .NET Framework 4.7.1 (Windows 7 SP1 and later)](https://www.microsoft.com/en-US/download/details.aspx?id=56116)
 
 [Download: Mono Framework (Windows, macOS and Linux)](https://www.mono-project.com/download/stable/)
-
-[VirusTotal report for Compaire v1.0 release](https://www.virustotal.com/#/file/e0e801c15d25ae0565136508526f694ce9f95ec9c0b828f8c2d164cb09ec1b5c/detection)
