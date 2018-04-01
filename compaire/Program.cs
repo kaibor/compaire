@@ -120,7 +120,7 @@ namespace compaire
         }
 
         // DOUBLE - VERSION OF THE PROGRAM
-        private const double version = 1.0;
+        private const double version = 1.1;
 
         // STRING LISTS - COLLECTING QUERIED FOLDERS AND FILES
         private static List<string> queriedFolders = new List<string>();
@@ -281,36 +281,33 @@ namespace compaire
                 // query arguments
                 foreach (string arg in args)
                 {
+
                     // handle parameters
-                    switch (arg)
+                    switch (arg.ToLower())
                     {
                         // create log file?
                         case "/l":
-                        case "/L":
                             createLog = true;
                             debugPrint("createLog = true");
                             break;
                         // skip missing files automatically?
                         case "/s":
-                        case "/S":
                             autoSkipMissing = true;
                             debugPrint("autoSkipMissing = true");
                             break;
                         // generate file with master hashes?
                         case "/m":
-                        case "/M":
                             generateHashFile = true;
                             debugPrint("generateHashFile = true");
                             break;
                         // recursive query?
                         case "/r":
-                        case "/R":
                             recursive = true;
                             debugPrint("recursive = true");
                             break;
                         // handle checksums
                         case "md5":
-                        case "MD5":
+                        case "/md5":
                             if (alg == null)
                             {
                                 alg = "MD5";
@@ -318,7 +315,7 @@ namespace compaire
                             }
                             break;
                         case "sha1":
-                        case "SHA1":
+                        case "/sha1":
                             if (alg == null)
                             {
                                 alg = "SHA1";
@@ -326,7 +323,7 @@ namespace compaire
                             }
                             break;
                         case "sha256":
-                        case "SHA256":
+                        case "/sha256":
                             if (alg == null)
                             {
                                 alg = "SHA256";
@@ -334,7 +331,7 @@ namespace compaire
                             }
                             break;
                         case "sha384":
-                        case "SHA384":
+                        case "/sha384":
                             if (alg == null)
                             {
                                 alg = "SHA384";
@@ -342,7 +339,7 @@ namespace compaire
                             }
                             break;
                         case "sha512":
-                        case "SHA512":
+                        case "/sha512":
                             if (alg == null)
                             {
                                 alg = "SHA512";
