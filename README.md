@@ -7,7 +7,7 @@ Small command line tool to compare the content of two directories by their check
 
 ## Release
 
-[Download: Compaire v1.1](https://github.com/kaibor/compaire/releases/download/1.1/compaire.exe)
+[Download: Compaire v1.2](https://github.com/kaibor/compaire/releases/download/1.2/compaire.exe)
 
 ## Compatibility
 Compaire was written in .NET Mono (C#) and supports the following operating systems:
@@ -48,9 +48,9 @@ Parameters are alternative modifications of the program execution and output:
 Parameter | Impact
 --------- | ------
 /l | Create a log file of the current session
-/s | Skip missing files automatically (don't show prompt for alternate path)
 /m | Generate a seperate file (.sums extension) which includes checksums of files in the master folder
 /r | Recursive comparison (include subdirectories)
+/s | Skip missing files automatically (don't show prompt for alternate path)
 
 ## FAQ
 
