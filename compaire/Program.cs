@@ -4,6 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
+using System.Reflection;
 
 namespace compaire
 {
@@ -110,7 +111,7 @@ namespace compaire
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" | |___| (_) | | | | | | |_) | (_| | | | |  __/");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("  \\_____\\___/|_| |_| |_| .__/ \\__,_|_|_|  \\___| v" + version.ToString("0.0").Replace(",", ".")); // print version (+ fixed style of output)
+            Console.WriteLine("  \\_____\\___/|_| |_| |_| .__/ \\__,_|_|_|  \\___| v" + getVersion().ToString("0.0").Replace(",", ".")); // print version (+ fixed style of output)
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("                       | | Developed by Kai Borchert");
             Console.ForegroundColor = ConsoleColor.White;
@@ -119,8 +120,13 @@ namespace compaire
             Console.WriteLine("");
         }
 
-        // DOUBLE - VERSION OF THE PROGRAM
-        private const double version = 1.1;
+        static float getVersion()
+        {
+            Version version = Assembly.GetExecutingAssembly().GetName().Version;
+            float major = version.Major;
+            float minor = version.Minor;
+            return (major + (minor / 10));
+        }
 
         // STRING LISTS - COLLECTING QUERIED FOLDERS AND FILES
         private static List<string> queriedFolders = new List<string>();
@@ -272,7 +278,7 @@ namespace compaire
 
             // optical output (clean console, title, logo)
             Console.Clear();
-            Console.Title = "Compaire v" + version.ToString("0.0").Replace(",", ".");
+            Console.Title = "Compaire v" + getVersion().ToString("0.0").Replace(",", ".");
             drawLogo();
 
             // are there at least two arguments given?
@@ -375,12 +381,12 @@ namespace compaire
                 Console.WriteLine();
                 colouredBrackets("/l", 1, 1);
                 Console.WriteLine("\tCreate log file");
-                colouredBrackets("/s", 1, 1);
-                Console.WriteLine("\tSkip missing files");
                 colouredBrackets("/m", 1, 1);
                 Console.WriteLine("\tGenerate seperate file with master hashes");
                 colouredBrackets("/r", 1, 1);
-                Console.WriteLine("\tRecursive Mode\n");
+                Console.WriteLine("\tRecursive Mode");
+                colouredBrackets("/s", 1, 1);
+                Console.WriteLine("\tSkip missing files\n");
 
                 // available algorithms
                 Console.ForegroundColor = ConsoleColor.Cyan;
